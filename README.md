@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/34995981/README.md)
+[README.md](https://github.com/user-attachments/files/34997063/README.md)
 # ◈ AI & Digital Law
 
 **Free, automated monitoring of EU AI and digital regulation**  
@@ -13,13 +13,12 @@ AI & Digital Law (repository: `ai---regulatory---radar`) is a personal **RegTech
 - Daily RSS/Atom collection via GitHub Actions (also manual trigger).
 - Official institutional source registry in `config/sources.json`.
 - Keyword filtering to screen relevance to AI, privacy and EU digital rules.
-- Two broad filter views: **Artificial Intelligence** and **Other Digital Regulation**, with cross-topic publications appearing in both when keywords match.
 - Seven interactive regulatory areas, selectable directly in the dashboard: **Intelligenza artificiale** (AI Act, AI systems, generative models), **Privacy** (GDPR), **Governance dei dati** (Data Act, Data Governance Act), **Piattaforme digitali** (DSA), **Mercati digitali** (DMA), **Cybersecurity** (NIS2, Cyber Resilience Act), and **Novità legislative** (EU digital regulatory proposals). Each shows the actual number of matching archived publications.
 - Broader digital coverage includes GDPR, Data Act, DSA, DMA, NIS2, cybersecurity, Data Governance Act, Cyber Resilience Act and selected EU digital legislative proposals; coverage remains dependent on enabled institutional RSS feeds.
 - Simple **keyword-based topic tags**, e.g. AI Act, GDPR or Data Act. Tags are indicative and can be missing or incorrect; they are **not legal analysis**.
 - Stable URL-derived IDs for deduplication and JSON archival in `data/items.json`.
 - Responsive dashboard in `docs/index.html` with sidebar navigation, source/topic filters, an interactive monthly chart, expandable feed excerpts and a curated regulatory timeline.
-- Filter by institutional source and an official-source directory showing the latest feed-check result and timestamps.
+- An institutional-source directory showing all configured sources, distinguishing active RSS feeds from sources awaiting integration, with the latest feed-check result and timestamps.
 - Optional Telegram or SMTP email notifications for newly found entries.
 - Original official link, title, feed excerpt, date (if provided) and institution retained.
 
@@ -41,7 +40,7 @@ flowchart TD
 | [EUR-Lex legislative feeds](https://eur-lex.europa.eu/content/help/search/predefined-rss.html?locale=it) | Broad RSS enabled; filtered by keywords |
 | [EUR-Lex personalised RSS](https://eur-lex.europa.eu/content/help/my-eurlex/my-rss-feeds.html?locale=it) | Ready for an official custom alert |
 | [European Commission news](https://commission.europa.eu/news_en) | Official general RSS enabled; filtered by keywords |
-| [EU AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office) | Dedicated feed still awaiting verification |
+| [Council of the EU — press releases](https://www.consilium.europa.eu/en/about-site/rss/) | Official RSS feed configured; reachability checked on next workflow run |
 | [Italian Garante Privacy](https://www.garanteprivacy.it/gpdp-rss) | Official news RSS enabled |
 
 The enabled feeds are **not comprehensive**. Some relevant publications may be missed, and keyword filtering can include false positives. Enable other feeds in `config/sources.json` only after checking their official RSS URLs.
