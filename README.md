@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/34997063/README.md)
+[README.md](https://github.com/user-attachments/files/34998331/README.md)
 # ◈ AI & Digital Law
 
 **Free, automated monitoring of EU AI and digital regulation**  
@@ -67,7 +67,7 @@ Open `docs/index.html` in your browser. The archive contains actual feed entries
 
 ## GitHub Actions and GitHub Pages
 
-`.github/workflows/daily.yml` runs daily at **07:20 UTC** and can also be started via **Actions → Daily regulatory radar → Run workflow**. Scheduled jobs may be delayed or disabled for inactivity.
+`.github/workflows/daily.yml` runs **once per hour, at minute 17 UTC** (for example 08:17, 09:17 and 10:17 UTC); it can also be started via **Actions → Hourly regulatory radar → Run workflow**. GitHub may delay or occasionally skip scheduled executions, and scheduled workflows in inactive public repositories can be disabled. Every run checks the feeds; the dashboard changes only when new data or status information is recorded.
 
 In **Settings → Pages**, select **Deploy from a branch**, `main`, `/docs`. The workflow needs `contents: write` to commit its archive and dashboard; repository or organization policy may restrict that. GitHub Actions and Pages can be used at no cost within applicable plan and usage limits.
 
