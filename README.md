@@ -12,6 +12,8 @@ AI & Digital Law (repository: `ai---regulatory---radar`) is a personal **RegTech
 - Daily RSS/Atom collection via GitHub Actions (also manual trigger).
 - Official institutional source registry in `config/sources.json`.
 - Keyword filtering to screen relevance to AI, privacy and EU digital rules.
+- Two broad filter views: **Artificial Intelligence** and **Other Digital Regulation**, with cross-topic publications appearing in both when keywords match.
+- Broader digital coverage includes GDPR, Data Act, DSA, DMA, NIS2, cybersecurity, Data Governance Act, Cyber Resilience Act and selected EU digital legislative proposals; coverage remains dependent on enabled institutional RSS feeds.
 - Simple **keyword-based topic tags**, e.g. AI Act, GDPR or Data Act. Tags are indicative and can be missing or incorrect; they are **not legal analysis**.
 - Stable URL-derived IDs for deduplication and JSON archival in `data/items.json`.
 - Responsive dashboard in `docs/index.html` with sidebar navigation, source/topic filters, an interactive monthly chart, expandable feed excerpts and a curated regulatory timeline.
