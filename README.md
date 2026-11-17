@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/34995981/README.md)
 # ◈ AI & Digital Law
 
 **Free, automated monitoring of EU AI and digital regulation**  
@@ -13,6 +14,7 @@ AI & Digital Law (repository: `ai---regulatory---radar`) is a personal **RegTech
 - Official institutional source registry in `config/sources.json`.
 - Keyword filtering to screen relevance to AI, privacy and EU digital rules.
 - Two broad filter views: **Artificial Intelligence** and **Other Digital Regulation**, with cross-topic publications appearing in both when keywords match.
+- Seven interactive regulatory areas, selectable directly in the dashboard: **Intelligenza artificiale** (AI Act, AI systems, generative models), **Privacy** (GDPR), **Governance dei dati** (Data Act, Data Governance Act), **Piattaforme digitali** (DSA), **Mercati digitali** (DMA), **Cybersecurity** (NIS2, Cyber Resilience Act), and **Novità legislative** (EU digital regulatory proposals). Each shows the actual number of matching archived publications.
 - Broader digital coverage includes GDPR, Data Act, DSA, DMA, NIS2, cybersecurity, Data Governance Act, Cyber Resilience Act and selected EU digital legislative proposals; coverage remains dependent on enabled institutional RSS feeds.
 - Simple **keyword-based topic tags**, e.g. AI Act, GDPR or Data Act. Tags are indicative and can be missing or incorrect; they are **not legal analysis**.
 - Stable URL-derived IDs for deduplication and JSON archival in `data/items.json`.
