@@ -1,4 +1,4 @@
-"""Pipeline giornaliera: feed ufficiali → classificazione → archivio → digest."""
+"""Pipeline gratuita: feed ufficiali → filtro trasparente → archivio → digest."""
 from __future__ import annotations
 
 import argparse
@@ -20,10 +20,15 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "items.json"
 SOURCES = ROOT / "config" / "sources.json"
-PROMPT = ROOT / "prompts" / "classification_it.md"
 KEYWORDS = re.compile(r"\b(ai act|artificial intelligence|intelligenza artificiale|\bai\b|gdpr|privacy|data protection|protezione dei dati|data act|digital services act|digital markets act|nis2|algorithm|algoritm|machine learning|automated decision|decisioni automatizzate|biometr|general.purpose|modelli di ia)\b", re.I)
-ALLOWED_ACTS = {"AI Act", "GDPR", "Data Act", "DSA", "DMA", "NIS2", "Altro"}
-ALLOWED_URGENCY = {"alta", "media", "bassa", "da_verificare"}
+ACT_PATTERNS = {
+    "AI Act": r"\b(ai act|artificial intelligence act|regolamento.{0,20}intelligenza artificiale|2024/1689)\b",
+    "GDPR": r"\b(gdpr|rgpd|2016/679|general data protection regulation)\b",
+    "Data Act": r"\b(data act|2023/2854)\b",
+    "DSA": r"\b(digital services act|2022/2065|\bdsa\b)\b",
+    "DMA": r"\b(digital markets act|2022/1925|\bdma\b)\b",
+    "NIS2": r"\b(nis2|nis 2|2022/2555)\b",
+}
 LOG = logging.getLogger("radar")
 
 
@@ -74,48 +79,19 @@ def fetch_sources() -> list[dict]:
     return gathered
 
 
-def pending_classification() -> dict:
-    return {"relevant": True, "act": "Altro", "type": "altro",
-            "summary_it": "Sintesi non disponibile: in attesa di classificazione e verifica.",
-            "what_changes": "Da verificare sulla fonte ufficiale",
-            "applies_to": "Da verificare sulla fonte ufficiale",
-            "urgency": "da_verificare", "urgency_reason": "Classificazione non ancora verificata",
-            "legal_effect_confirmed": False, "review_required": True}
-
-
-def classify(entry: dict, client=None) -> dict:
-    if client is None:
-        return pending_classification()
-    instructions = PROMPT.read_text(encoding="utf-8")
-    try:
-        answer = client.chat.completions.create(
-            model=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"), temperature=0,
-            response_format={"type": "json_object"},
-            messages=[{"role": "system", "content": instructions},
-                      {"role": "user", "content": json.dumps(entry, ensure_ascii=False)}],
-        )
-        result = json.loads(answer.choices[0].message.content)
-        required = set(pending_classification())
-        if not required.issubset(result) or result["act"] not in ALLOWED_ACTS or result["urgency"] not in ALLOWED_URGENCY:
-            raise ValueError("Risposta JSON incompleta o con valori non consentiti")
-        for key in ("summary_it", "what_changes", "applies_to", "urgency_reason", "type"):
-            if not isinstance(result[key], str):
-                raise ValueError(f"Campo non valido: {key}")
-            result[key] = plain(result[key], 900)
-        result["review_required"] = True  # La sintesi non è verificata da un giurista.
-        return result
-    except Exception as exc:
-        LOG.warning("Classificazione fallita per %s: %s", entry["id"], exc)
-        return pending_classification()
+def identify_acts(entry: dict) -> list[str]:
+    """Etichette indicative solo da corrispondenze testuali, non analisi legale."""
+    text = f"{entry.get('title', '')} {entry.get('summary', '')}"
+    return [act for act, pattern in ACT_PATTERNS.items() if re.search(pattern, text, re.I)]
 
 
 def digest_text(items: list[dict]) -> str:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    lines = [f"AI Regulatory Radar — Digest {today}", "", "Sintesi automatizzate da verificare sulle fonti ufficiali. Non è consulenza legale.", ""]
+    lines = [f"AI Regulatory Radar — Digest {today}", "", "Elenco di pubblicazioni ufficiali. Non è consulenza legale.", ""]
     for item in items:
-        c = item["classification"]
-        lines.extend([f"• {item['title']}", f"  Fonte: {item['source']} | Atto: {c['act']} | Urgenza: {c['urgency']}",
-                      f"  {c['summary_it']}", f"  Fonte ufficiale: {item['link']}", ""])
+        acts = ", ".join(item.get("acts", [])) or "Non identificato"
+        lines.extend([f"• {item['title']}", f"  Fonte: {item['source']} | Tema indicativo: {acts}",
+                      f"  Pubblicazione: {item.get('published') or 'Data non indicata'}", f"  Fonte ufficiale: {item['link']}", ""])
     return "\n".join(lines)
 
 
@@ -143,7 +119,7 @@ def notify(items: list[dict]) -> None:
             smtp.send_message(msg)
 
 
-def run(dry_run: bool = False, skip_notify: bool = False, reclassify_pending: bool = False) -> int:
+def run(dry_run: bool = False, skip_notify: bool = False) -> int:
     DATA.parent.mkdir(parents=True, exist_ok=True)
     archive = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else []
     known = {item["id"] for item in archive}
@@ -152,17 +128,13 @@ def run(dry_run: bool = False, skip_notify: bool = False, reclassify_pending: bo
     LOG.info("Nuove voci: %d", len(fresh))
     if dry_run:
         return len(fresh)
-    client = None
-    if os.getenv("OPENAI_API_KEY"):
-        from openai import OpenAI
-        client = OpenAI(api_key=os.environ["OPENAI_API_KEY"], timeout=35, max_retries=2)
     for entry in fresh:
-        entry["classification"] = classify(entry, client)
+        entry["acts"] = identify_acts(entry)
         entry["seen_at"] = datetime.now(timezone.utc).isoformat()
-    if reclassify_pending and client is not None:
-        for entry in archive:
-            if entry.get("classification", {}).get("urgency") == "da_verificare":
-                entry["classification"] = classify(entry, client)
+    # Migrazione automatica dei dati della versione precedente, senza rifare il fetch.
+    for entry in archive:
+        entry["acts"] = identify_acts(entry)
+        entry.pop("classification", None)
     archive = sorted(fresh + archive, key=lambda x: (x.get("published") or "", x.get("seen_at") or ""), reverse=True)
     DATA.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if not skip_notify:
@@ -177,7 +149,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--skip-notify", action="store_true")
-    parser.add_argument("--reclassify-pending", action="store_true", help="Riprova la classificazione delle voci in attesa usando la API AI")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
-    print(f"Nuove voci: {run(args.dry_run, args.skip_notify, args.reclassify_pending)}")
+    print(f"Nuove voci: {run(args.dry_run, args.skip_notify)}")
