@@ -9,6 +9,9 @@
     "seen_at": "2026-11-17T17:09:38.529868+00:00",
     "acts": [
       "GDPR"
+    ],
+    "areas": [
+      "Altre normative digitali"
     ]
   },
   {
@@ -19,7 +22,11 @@
     "summary": "",
     "link": "https://www.gpdp.it/garante/doc.jsp?ID=Intelligenza artificiale nelle scuole, OK del Garante privacy",
     "acts": [],
-    "seen_at": "2026-11-17T19:21:23.682919+00:00"
+    "seen_at": "2026-11-17T19:21:23.682919+00:00",
+    "areas": [
+      "Intelligenza artificiale",
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "4790fdf5b3b46de46009",
@@ -31,7 +38,10 @@
     "acts": [
       "DSA"
     ],
-    "seen_at": "2026-11-17T19:21:23.682806+00:00"
+    "seen_at": "2026-11-17T19:21:23.682806+00:00",
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "f3fa7392ba53cb8fd990",
@@ -41,7 +51,10 @@
     "summary": "- ENGLISH VERSION Facebook: il Garante privacy sanziona Meta per 805 milioni di euro Foto e video della galleria degli utenti Android usati senza un consenso specifico. Entro 60 giorni la funzione dovrà essere disattivata per impostazione predefinita...",
     "link": "https://www.gpdp.it/garante/doc.jsp?ID=10321080",
     "acts": [],
-    "seen_at": "2026-11-17T19:21:23.682971+00:00"
+    "seen_at": "2026-11-17T19:21:23.682971+00:00",
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "5a4500a8af27272626ec",
@@ -51,7 +64,10 @@
     "summary": "RespiVirNet, Il Garante: \"Nessuna sospensione decisa da noi\" Il Garante Privacy precisa di non aver disposto alcuna sospensione dei flussi di dati di RespiVirNet: l’hanno decisa autonomamente Regioni e Province autonome. Dal 2012 è la legge che preve...",
     "link": "https://www.gpdp.it/garante/doc.jsp?ID=10321055",
     "acts": [],
-    "seen_at": "2026-11-17T19:21:23.683031+00:00"
+    "seen_at": "2026-11-17T19:21:23.683031+00:00",
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "b0061d7d1ddd066d6c18",
@@ -61,7 +77,10 @@
     "summary": "Brussels 13 November – At its latest plenary, the EDPB adopted a statement on the use of other models of contractual clauses for onward transfers of personal data * . The statement welcomes recent updates made by the European Commission on its FAQs on the EU Standard Contractual Clauses (SCCs) **, recognising that the Model Contractual Clauses (MCCs) developed by the Council of Europe (CoE MCC) and the ones developed by the Ibero-American Data Protection Network (RIPD MCC) may also be used for onward transfers of personal data received under the EU SCCs. Result of a joint work The EDPB and the Commission cooperated closely on this matter. The Board welcomes the Commission’s recognition of these additional instruments to onward transfer personal data received under the EU SCCs. This means that, under the conditions explained in the Commission’s FAQs, an appropriate level of protection of individuals as guaranteed by the European data protection law may be provided when data is onward transferred on the basis of these sets of clauses. In addition, the EDPB statement provides practical guidance to organisations seeking to rely on these MCCs, subject to the conditions set out in the Commission’s FAQs. Note to editors: * Model contractual clauses are contractual clauses developed by organisations and third countries. This news item refers to the Model Contractual Clauses developed by the Council of Europe (CoE MCC) and the ones by the Ibero-American Data Protection Network (RIPD MCC). ** Standard contractual clauses are&nbsp;standardised&nbsp;and&nbsp;pre-approved model data pro",
     "link": "https://www.edpb.europa.eu/news/edpb-supports-use-of-other-models-of-contractual-clauses-for-onward-transfers-of-personal-data_en",
     "seen_at": "2026-11-17T17:09:38.529878+00:00",
-    "acts": []
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "e7732abcd54f3c77cce8",
@@ -71,7 +90,10 @@
     "summary": "NEWSLETTER N. 556 del 12 novembre 2026 Black Friday, consigli del Garante Privacy per acquisti più sicuri Illiceità del Ministero della Giustizia nel trattamento dati dei minori Centro radiologico di Matera, resi pubblici i dati dei pazienti Sanziona...",
     "link": "https://www.gpdp.it/garante/doc.jsp?ID=10319176",
     "acts": [],
-    "seen_at": "2026-11-17T19:21:23.683079+00:00"
+    "seen_at": "2026-11-17T19:21:23.683079+00:00",
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "0129852f13ac8ae2de50",
@@ -81,7 +103,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2549",
     "seen_at": "2026-11-17T17:09:38.529892+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "b937081ecdb248b58102",
@@ -91,7 +114,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2551",
     "seen_at": "2026-11-17T17:09:38.529891+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "5910400f6a741887f26d",
@@ -103,7 +127,36 @@
     "seen_at": "2026-11-17T17:09:38.529881+00:00",
     "acts": [
       "GDPR"
+    ],
+    "areas": [
+      "Altre normative digitali"
     ]
+  },
+  {
+    "id": "8db3cca7a734fed1a510",
+    "source": "Garante Privacy — News",
+    "title": "Il PODCAST del Garante - Data breach, cosa sono e come difendersi",
+    "published": "2026-11-10",
+    "summary": "Data breach, cosa sono e come difendersi Il podcast assolutamente da ascoltare Un referto medico consegnato a un destinatario sbagliato. La pubblicazione involontaria di dati sul web, oppure lo smarrimento di dispositivi aziendali. L'esperienza dimos...",
+    "link": "https://www.gpdp.it/garante/doc.jsp?ID=10318656",
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ],
+    "seen_at": "2026-11-17T20:52:21.206944+00:00"
+  },
+  {
+    "id": "8043026d45311c07d99b",
+    "source": "Commissione europea — News",
+    "title": "Making your online experience fairer",
+    "published": "2026-11-10",
+    "summary": "The European Commission presented its proposal for a Digital Fairness Act, a major update of the EU consumer protection rules to ensure that consumers in the EU enjoy the same high level of protection online as they do offline.",
+    "link": "https://commission.europa.eu/news-and-media/news/making-your-online-experience-fairer-2026-11-11_en",
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ],
+    "seen_at": "2026-11-17T20:52:21.206789+00:00"
   },
   {
     "id": "ec547fb4a548d76e8d76",
@@ -113,7 +166,10 @@
     "summary": "",
     "link": "https://www.gpdp.it/garante/doc.jsp?ID=10318565",
     "acts": [],
-    "seen_at": "2026-11-17T19:21:23.683096+00:00"
+    "seen_at": "2026-11-17T19:21:23.683096+00:00",
+    "areas": [
+      "Intelligenza artificiale"
+    ]
   },
   {
     "id": "6298d9b275d4578eecb5",
@@ -123,7 +179,10 @@
     "summary": "Background information Date of final decision: 14/05/2026 National case Controller: Wind Tre S.p.A. Legal References: Article 5 (Principles relating to processing of personal data), Article 32 (Security of processing) Decision: Administrative fine, Compliance order Key words: Personal data breaches, Basic principles, Cybersecurity Summary of the Decision Origin of the case The Italian Data Protection Authority (DPA) launched an investigation into Wind Tre S.p.A. following two personal data breaches notified by the company in February 2025. The breaches involved unauthorised access to the company's systems at two different retail outlets. The attackers, posing as technical support staff, used social engineering techniques to persuade employees to grant remote access to their devices. The attackers subsequently gained access to customers' personal data, including identification and contact details. Overall, the breaches affected more than 365 000 customers. For 41 359 individuals, the compromised information also included payment method details, such as IBANs, postal payment slips and partially masked credit card numbers with expiry dates. Key Findings The Italian DPA found serious shortcomings in the technical and organisational measures implemented by Wind Tre to ensure the security of personal data. In particular, the investigation identified inadequate management and protection of digital certificates, private keys and access credentials used within the company's sales network. The DPA also found weaknesses in the security controls applied to certain application programmi",
     "link": "https://www.edpb.europa.eu/news/italian-dpa-fines-wind-tre-eur-17-million-for-data-security-failures-affecting-over-365-000_en",
     "seen_at": "2026-11-17T17:09:38.529885+00:00",
-    "acts": []
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "a1820352484a71abbe8c",
@@ -133,7 +192,10 @@
     "summary": "Background information Date of final decision: 23/09/2026 National case Controller: Barbuti S.p.A. Legal References: Article 5 (Principles relating to processing of personal data), Article 12 (Transparent information, communication and modalities for the exercise of the rights of the data subject), Article 17 (Right to erasure (‘right to be forgotten’) Decision: Administrative fine, Compliance order Key words: Data subjects rights, Fines, Marketing Summary of the Decision Origin of the case The Italian Data Protection Authority (DPA) received a complaint from an individual who continued to receive promotional text messages from Barbuti S.p.A., a clothing company, despite having requested the erasure of their personal data. The individual had sent the request to the company's general contact email address, as the promotional messages did not provide information on how to exercise data protection rights. Although the company sent an automatic acknowledgement, it failed to respond to the request and continued sending promotional messages. Key Findings The Italian DPA found that the company had failed to implement adequate organisational measures to handle data subject requests received through its communication channels. Referring to the EDPB Guidelines 01/2022 on data subject rights, the DPA stressed that requests submitted through a communication channel provided by the controller, even if different from the preferred channel indicated in its privacy notice, should generally be considered valid and handled accordingly. The company should therefore have ensured that the reque",
     "link": "https://www.edpb.europa.eu/news/italian-dpa-fines-clothing-company-for-failing-to-handle-erasure-request_en",
     "seen_at": "2026-11-17T17:09:38.529883+00:00",
-    "acts": []
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "35d3974a589812115785",
@@ -143,7 +205,10 @@
     "summary": "Summary of the Decision Origin of the case The Italian Data Protection Authority (DPA) received a complaint from an employee of Poste Italiane who, following the rejection of a loan application submitted through BancoPosta, discovered that information concerning her financial situation was accessible through a platform used by authorised company staff. The information included her net income and existing financial commitments. The complainant questioned the disclosure of these data and requested their erasure. The DPA launched an investigation into the processing of personal data by Poste Italiane and Deutsche Bank in connection with the promotion and provision of BancoPosta loans. Key Findings The investigation established that, contrary to their contractual arrangements, Poste Italiane and Deutsche Bank acted as independent data controllers. Poste Italiane collected loan applications and carried out intermediary activities, including identifying financial products suited to applicants' needs, while Deutsche Bank independently assessed creditworthiness and decided whether to grant the loans. The DPA found that the privacy notices provided by both companies did not adequately reflect their respective roles and the personal data exchanged between them. In particular, Poste Italiane had failed to provide sufficiently clear information on the processing carried out during the promotion and distribution of loans, including the recipients of personal data and information flows involving the bank. Deutsche Bank had also failed to correctly identify Poste Italiane as a recipient o",
     "link": "https://www.edpb.europa.eu/news/italian-dpa-fines-poste-italiane-and-deutsche-bank-a-combined-eur-81-000-for-lack-of_en",
     "seen_at": "2026-11-17T17:09:38.529882+00:00",
-    "acts": []
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "a2a048ac218795351099",
@@ -155,7 +220,10 @@
     "acts": [
       "DSA"
     ],
-    "seen_at": "2026-11-17T19:21:23.682863+00:00"
+    "seen_at": "2026-11-17T19:21:23.682863+00:00",
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "d9b14998a5874469b902",
@@ -165,7 +233,10 @@
     "summary": "The education and skills package helps reverse the decline in basic skills and improve teaching and how digital tools and AI are used in education",
     "link": "https://commission.europa.eu/news-and-media/news/shaping-europes-future-through-education-and-training-2026-11-05_en",
     "acts": [],
-    "seen_at": "2026-11-17T19:21:23.682904+00:00"
+    "seen_at": "2026-11-17T19:21:23.682904+00:00",
+    "areas": [
+      "Intelligenza artificiale"
+    ]
   },
   {
     "id": "19e6bcc0f8e64328d786",
@@ -175,7 +246,10 @@
     "summary": "Brussels, 04 November - European Data Protection Authorities (DPAs) work together to protect personal data, especially for children who are more vulnerable online. Kids may not recognise risks easily, trust strangers, or share personal data carelessly. Many apps collect their data, and without proper safeguards, they could be exposed to harmful content and leave long-lasting digital footprints. This is why the EDPB launches ‘Privacy for Kids’ , a new hub for parents, teachers, and educators. It provides engaging and children friendly resources such as games, videos and quizzes, to understand online privacy. Eddy the beaver and his friends will guide you through materials from DPAs from all over Europe , available in different languages. An intuitive filtering system helps you find educational resources by selecting from: Age groups: 3-10, 11-15, and 16+. Geographic coverage: all 27 EU Member States plus Iceland, Liechtenstein, and Norway Topics: sharing online, social media, smartphones and apps, privacy at home, privacy at school, cyberbullying, smart toys, etc. Content formats: projects, informational campaigns, games, infographics, videos, quizzes, and more. Explore the new hub and share this video with young people to spread the word! &nbsp; Sorry, your browser doesn't support embedded videos.",
     "link": "https://www.edpb.europa.eu/news/edpb-helps-kids-stay-safe-online_en",
     "seen_at": "2026-11-17T17:09:38.529886+00:00",
-    "acts": []
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ]
   },
   {
     "id": "c38832f60390726818e0",
@@ -185,7 +259,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026R2387",
     "seen_at": "2026-11-17T17:09:38.529893+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "66f4b2fc1d303efe2a5a",
@@ -195,7 +270,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2458",
     "seen_at": "2026-11-17T17:09:38.529897+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "ae048602562216eb3c3d",
@@ -205,7 +281,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2472",
     "seen_at": "2026-11-17T17:09:38.529895+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "07d79a4391dbb91ac958",
@@ -215,7 +292,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026L2450",
     "seen_at": "2026-11-17T17:09:38.529894+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "b541335fbc441ac863de",
@@ -225,7 +303,8 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2457",
     "seen_at": "2026-11-17T17:09:38.529898+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
   },
   {
     "id": "9a128a42c5bfcd8e7103",
@@ -235,7 +314,21 @@
     "summary": "",
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026R2446",
     "seen_at": "2026-11-17T17:09:38.529899+00:00",
-    "acts": []
+    "acts": [],
+    "areas": []
+  },
+  {
+    "id": "41856578098c8a597f99",
+    "source": "Commissione europea — News",
+    "title": "Click wisely: promoting online safety during European Cybersecurity Month",
+    "published": "2026-10-19",
+    "summary": "Learn about the EU campaign to promote cybersecurity in the Europe and about what the EU is doing to better prepare us for and respond to cybersecurity threats",
+    "link": "https://commission.europa.eu/news-and-media/news/click-wisely-promoting-online-safety-during-european-cybersecurity-month-2026-10-20_en",
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ],
+    "seen_at": "2026-11-17T20:52:21.206873+00:00"
   },
   {
     "id": "d1fefb7e3a67472b6a06",
@@ -247,6 +340,9 @@
     "seen_at": "2026-11-17T17:09:38.529887+00:00",
     "acts": [
       "GDPR"
+    ],
+    "areas": [
+      "Altre normative digitali"
     ]
   },
   {
@@ -259,6 +355,9 @@
     "seen_at": "2026-11-17T17:09:38.529889+00:00",
     "acts": [
       "GDPR"
+    ],
+    "areas": [
+      "Altre normative digitali"
     ]
   },
   {
@@ -269,6 +368,9 @@
     "summary": "Background information Date of final decision: 14 May 2026 National case Controller: Emirates Legal Reference(s): Article 5 (Principles relating to processing of personal data), Article 12 (Transparent information, communication and modalities for the exercise of the rights of the data subject) and Article 13 (Information to be provided where personal data are collected from the data subject) Decision: Administrative fine, Compliance order Key words: Health and research, Basic principles Summary of the Decision Origin of the case &nbsp; The Italian Data Protection Authority (DPA) initiated an investigation following a complaint lodged by a passenger concerning the processing of health data by Emirates in connection with assistance for passengers with disabilities or reduced mobility. The complainant stated that Emirates had required her to complete a MEDIF (Medical Information for Fitness to Travel or Special Assistance) form, although she claimed not to fall within the categories of passengers required to do so. The form collected information concerning passengers’ health, as well as data relating to their doctor and any accompanying person. The complainant also raised concerns about the information provided regarding the processing of such data. Key Findings After consulting the Italian Civil Aviation Authority, the Italian DPA found that the processing of health data through the MEDIF form could be lawful where necessary to ensure safe air transport and provide appropriate assistance to passengers with disabilities or reduced mobility. Therefore, it found no infringement",
     "link": "https://www.edpb.europa.eu/news/italian-dpa-fines-emirates-eur-180-000-for-infringements-concerning-passengers-health-data_en",
     "seen_at": "2026-11-17T17:09:38.529890+00:00",
-    "acts": []
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ]
   }
 ]
