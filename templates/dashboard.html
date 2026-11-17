@@ -66,7 +66,7 @@
         <div class="topic-grid" id="topic-grid"></div>
       </section>
       <section class="section" id="aggiornamenti"><div class="section-top"><div><div class="eyebrow">Notizie istituzionali</div><h2>Ultimi aggiornamenti</h2></div><p id="result-count"></p></div>
-        <div class="filters"><input id="search" type="search" placeholder="Cerca nelle pubblicazioni…" aria-label="Cerca pubblicazioni"><select id="act" aria-label="Filtra per tema"><option value="">Tutti i temi</option></select><select id="month" aria-label="Filtra per mese"><option value="">Tutti i mesi</option></select></div>
+        <div class="filters"><input id="search" type="search" placeholder="Cerca nelle pubblicazioni…" aria-label="Cerca pubblicazioni"><select id="month" aria-label="Filtra per mese"><option value="">Tutti i mesi</option></select></div>
         <div class="news-grid" id="news"></div>
       </section>
       <section class="section" id="timeline"><div class="section-top"><div><div class="eyebrow">Riferimenti temporali</div><h2>Timeline normativa europea</h2></div><select id="timelineFilter" aria-label="Filtra la timeline per normativa"><option value="">Tutte le normative</option></select></div><div class="timeline" id="timeline-list"></div></section>
@@ -84,7 +84,7 @@ const el=(tag,cls,label)=>{const element=document.createElement(tag);if(cls)elem
 const anchor=(url,label)=>{const a=el('a','',label);if(/^https:\/\//.test(url||'')){a.href=url;a.target='_blank';a.rel='noopener noreferrer'}return a};
 const unique=arr=>[...new Set(arr)].sort();
 const acts=unique([...db.items.flatMap(x=>x.acts||[]),...db.milestones.map(x=>x.act)]);
-for(const id of ['act','timelineFilter'])for(const act of acts){const opt=el('option','',act);opt.value=act;byId(id).append(opt)}
+for(const act of acts){const opt=el('option','',act);opt.value=act;byId('timelineFilter').append(opt)}
 const months=unique(db.items.map(x=>(x.published||'').slice(0,7)).filter(x=>/^\d{4}-\d{2}$/.test(x))).reverse();
 for(const month of months){const opt=el('option','',new Date(`${month}-01T12:00:00Z`).toLocaleDateString('it-IT',{month:'long',year:'numeric',timeZone:'UTC'}));opt.value=month;byId('month').append(opt)}
 byId('count').textContent=db.items.length;
@@ -103,8 +103,8 @@ const TOPICS=[
  ['Novità legislative','Proposte europee sulla regolamentazione digitale']
 ];
 function renderTopics(){const root=byId('topic-grid');root.replaceChildren();for(const [name,description] of TOPICS){const button=el('button','topic-card');button.type='button';button.setAttribute('aria-pressed',String(selectedTopic===name));button.setAttribute('aria-label',`Filtra le pubblicazioni: ${name}`);const total=db.items.filter(x=>(x.topics||[]).includes(name)).length;button.append(el('strong','',name),el('span','topic-description',description),el('span','topic-count',`${total} ${total===1?'pubblicazione':'pubblicazioni'} nell’archivio`));button.addEventListener('click',()=>{selectedTopic=selectedTopic===name?'':name;renderTopics();renderNews();byId('aggiornamenti').scrollIntoView({behavior:'smooth'})});root.append(button)}}
-function renderNews(){const q=byId('search').value.trim().toLocaleLowerCase('it'),act=byId('act').value,month=byId('month').value;
- const items=db.items.filter(x=>(!selectedTopic||(x.topics||[]).includes(selectedTopic))&&(!act||(x.acts||[]).includes(act))&&(!month||(x.published||'').startsWith(month))&&(`${x.title} ${x.summary||''} ${x.source}`.toLocaleLowerCase('it').includes(q)));
+function renderNews(){const q=byId('search').value.trim().toLocaleLowerCase('it'),month=byId('month').value;
+ const items=db.items.filter(x=>(!selectedTopic||(x.topics||[]).includes(selectedTopic))&&(!month||(x.published||'').startsWith(month))&&(`${x.title} ${x.summary||''} ${x.source}`.toLocaleLowerCase('it').includes(q)));
  byId('result-count').textContent=`${items.length} pubblicazioni trovate`;const root=byId('news');root.replaceChildren();
  if(!items.length){root.append(el('div','empty','Nessuna pubblicazione corrisponde ai filtri selezionati.'));return}
  for(const item of items.slice(0,100)){const card=el('article','news-card'),row=el('div','row');for(const tag of item.acts||[])row.append(el('span','pill',tag));if(row.childNodes.length)card.append(row);
@@ -117,7 +117,7 @@ function renderChart(){const root=byId('chart');root.replaceChildren();const sho
 function renderTimeline(){const root=byId('timeline-list');root.replaceChildren();const act=byId('timelineFilter').value;for(const event of [...db.milestones].filter(x=>!act||x.act===act).sort((a,b)=>a.date.localeCompare(b.date))){const article=el('article','timeline-event'),body=el('div');body.append(el('strong','',`${event.act} · ${event.title}`),el('p','',`Stato: ${event.status} · `),anchor(event.url,'Testo normativo ufficiale ↗'));article.append(el('time','',event.date),body);root.append(article)}}
 function when(value){if(!value)return 'Non disponibile';const date=new Date(value);return Number.isNaN(date.getTime())?'Non disponibile':date.toLocaleString('it-IT',{timeZone:'Europe/Rome',dateStyle:'short',timeStyle:'short'})+' (ora italiana)'}
 function renderSources(){const root=byId('sources-list');root.replaceChildren();for(const source of db.sources||[]){const status=(db.source_status||{})[source.name]||{},enabled=Boolean(source.enabled&&source.url),state=!enabled?'Non attiva / da integrare':status.status==='ok'?'Feed raggiunto':status.status==='error'?'Ultimo controllo non riuscito':'Controllo non ancora registrato',css=!enabled?'idle':status.status==='ok'?'ok':status.status==='error'?'error':'idle';const card=el('article','source-card');card.append(el('h3','',source.name),el('span',`state ${css}`,state),el('p','',`Ultimo controllo: ${enabled?when(status.last_checked):'—'}`));if(enabled)card.append(el('p','',`Ultima lettura riuscita: ${when(status.last_success)}`));card.append(anchor(source.homepage,'Visita il sito istituzionale ↗'));root.append(card)}}
-for(const id of ['search','act','month'])byId(id).addEventListener('input',()=>{renderNews();if(id==='month')renderChart()});
+for(const id of ['search','month'])byId(id).addEventListener('input',()=>{renderNews();if(id==='month')renderChart()});
 byId('topic-reset').addEventListener('click',()=>{selectedTopic='';renderTopics();renderNews();byId('aggiornamenti').scrollIntoView({behavior:'smooth'})});
 byId('timelineFilter').addEventListener('change',renderTimeline);
 for(const a of document.querySelectorAll('.nav-link'))a.addEventListener('click',()=>{document.querySelectorAll('.nav-link').forEach(x=>x.classList.remove('active'));a.classList.add('active')});
