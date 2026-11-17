@@ -33,6 +33,14 @@ ACT_PATTERNS = {
     "Cyber Resilience Act": r"\b(cyber resilience act|2024/2847)\b",
     "Data Governance Act": r"\b(data governance act|2022/868)\b",
 }
+TOPIC_PATTERNS = {
+    "Privacy": r"\b(gdpr|rgpd|privacy|data protection|protezione dei dati|dati personali|personal data|data breach|violazione dei dati|2016/679)\b",
+    "Governance dei dati": r"\b(data act|data governance act|2023/2854|2022/868|data sharing|condivisione dei dati|data spaces)\b",
+    "Piattaforme digitali": r"\b(digital services act|\bdsa\b|2022/2065|online platforms?|piattaforme (online|digitali)|servizi digitali)\b",
+    "Mercati digitali": r"\b(digital markets act|\bdma\b|2022/1925|gatekeepers?|mercati digitali)\b",
+    "Cybersecurity": r"\b(nis\s?2|2022/2555|cybersecurity|cyber security|sicurezza informatica|cyber resilience act|2024/2847|resilienza informatica)\b",
+    "Novità legislative": r"\b(proposta legislativa|legislative proposal|proposta di regolamento|proposed regulation|commission proposal|commission proposes|digital omnibus|consultazione pubblica|public consultation)\b",
+}
 LOG = logging.getLogger("radar")
 
 
@@ -112,6 +120,14 @@ def identify_areas(entry: dict) -> list[str]:
     return areas
 
 
+def identify_topics(entry: dict) -> list[str]:
+    """Sette ambiti descrittivi individuati per parole chiave, senza giudizi giuridici."""
+    text = f"{entry.get('title', '')} {entry.get('summary', '')}"
+    topics = ["Intelligenza artificiale"] if AI_TERMS.search(text) else []
+    topics.extend(name for name, pattern in TOPIC_PATTERNS.items() if re.search(pattern, text, re.I))
+    return topics
+
+
 def digest_text(items: list[dict]) -> str:
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     lines = [f"AI Regulatory Radar — Digest {today}", "", "Elenco di pubblicazioni ufficiali. Non è consulenza legale.", ""]
@@ -160,11 +176,13 @@ def run(dry_run: bool = False, skip_notify: bool = False) -> int:
     for entry in fresh:
         entry["acts"] = identify_acts(entry)
         entry["areas"] = identify_areas(entry)
+        entry["topics"] = identify_topics(entry)
         entry["seen_at"] = datetime.now(timezone.utc).isoformat()
     # Migrazione automatica dei dati della versione precedente, senza rifare il fetch.
     for entry in archive:
         entry["acts"] = identify_acts(entry)
         entry["areas"] = identify_areas(entry)
+        entry["topics"] = identify_topics(entry)
         entry.pop("classification", None)
     archive = sorted(fresh + archive, key=lambda x: (x.get("published") or "", x.get("seen_at") or ""), reverse=True)
     DATA.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
