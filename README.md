@@ -35,8 +35,9 @@ flowchart TD
 | [EDPB news](https://www.edpb.europa.eu/news_it) | RSS enabled |
 | [EUR-Lex legislative feeds](https://eur-lex.europa.eu/content/help/search/predefined-rss.html?locale=it) | Broad RSS enabled; filtered by keywords |
 | [EUR-Lex personalised RSS](https://eur-lex.europa.eu/content/help/my-eurlex/my-rss-feeds.html?locale=it) | Ready for an official custom alert |
-| [EU AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office) | Awaiting verification of an official feed |
-| [Italian Garante Privacy](https://www.garanteprivacy.it/gpdp-rss) | Awaiting verification of a specific RSS endpoint |
+| [European Commission news](https://commission.europa.eu/news_en) | Official general RSS enabled; filtered by keywords |
+| [EU AI Office](https://digital-strategy.ec.europa.eu/en/policies/ai-office) | Dedicated feed still awaiting verification |
+| [Italian Garante Privacy](https://www.garanteprivacy.it/gpdp-rss) | Official news RSS enabled |
 
 The enabled feeds are **not comprehensive**. Some relevant publications may be missed, and keyword filtering can include false positives. Enable other feeds in `config/sources.json` only after checking their official RSS URLs.
 
@@ -96,7 +97,8 @@ requirements.txt              Python dependencies
 
 ## Roadmap
 
-- [ ] Verify and enable Commission / AI Office and Garante official feeds.
+- [x] Verify and enable Commission news and Garante official feeds.
+- [ ] Verify a dedicated AI Office feed or other stable official access method.
 - [ ] Add source-health indicators and error alerts.
 - [ ] Add CSV exports and weekly digests.
 - [ ] Curate consultation deadlines separately from legislative milestones.

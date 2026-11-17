@@ -19,6 +19,13 @@
     "note": "Creare un alert da una ricerca AI Act / intelligenza artificiale nel proprio account EUR-Lex e incollare qui l'RSS."
   },
   {
+    "name": "Commissione europea — News",
+    "url": "https://commission.europa.eu/news/feed_en",
+    "homepage": "https://commission.europa.eu/news_en",
+    "enabled": true,
+    "note": "Feed generalista ufficiale; la pipeline seleziona gli aggiornamenti pertinenti con parole chiave."
+  },
+  {
     "name": "Commissione europea / AI Office",
     "url": "",
     "homepage": "https://digital-strategy.ec.europa.eu/en/policies/ai-office",
@@ -26,10 +33,10 @@
     "note": "Aggiungere solo un feed ufficiale verificato; non è configurato uno scraping fragile."
   },
   {
-    "name": "Garante Privacy",
-    "url": "",
+    "name": "Garante Privacy — News",
+    "url": "https://garanteprivacy.it/o/gpdp-rss/rss?t=news",
     "homepage": "https://www.garanteprivacy.it/gpdp-rss",
-    "enabled": false,
-    "note": "Verificare l'URL del singolo feed offerto dal sito prima di abilitarlo."
+    "enabled": true,
+    "note": "Feed RSS news del sito istituzionale del Garante."
   }
 ]
