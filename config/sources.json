@@ -26,11 +26,11 @@
     "note": "Feed generalista ufficiale; la pipeline seleziona gli aggiornamenti pertinenti con parole chiave."
   },
   {
-    "name": "Commissione europea / AI Office",
-    "url": "",
-    "homepage": "https://digital-strategy.ec.europa.eu/en/policies/ai-office",
-    "enabled": false,
-    "note": "Aggiungere solo un feed ufficiale verificato; non è configurato uno scraping fragile."
+    "name": "Consiglio dell'UE — Comunicati stampa",
+    "url": "https://www.consilium.europa.eu/en/rss/pressreleases.ashx",
+    "homepage": "https://www.consilium.europa.eu/en/about-site/rss/",
+    "enabled": true,
+    "note": "Feed RSS ufficiale dei comunicati stampa del Consiglio dell'UE; le notizie digitali sono filtrate per parole chiave. Il primo controllo automatico ne verificherà la raggiungibilità."
   },
   {
     "name": "Garante Privacy — News",
