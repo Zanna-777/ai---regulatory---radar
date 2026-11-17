@@ -20,7 +20,9 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "items.json"
 SOURCES = ROOT / "config" / "sources.json"
-KEYWORDS = re.compile(r"\b(ai act|artificial intelligence|intelligenza artificiale|\bai\b|gdpr|privacy|data protection|protezione dei dati|data act|digital services act|digital markets act|nis2|algorithm|algoritm|machine learning|automated decision|decisioni automatizzate|biometr|general.purpose|modelli di ia)\b", re.I)
+SOURCE_STATUS = ROOT / "data" / "source_status.json"
+AI_TERMS = re.compile(r"\b(ai act|artificial intelligence|intelligenza artificiale|machine learning|generative ai|general.purpose ai|foundation model|modelli? di ia|sistemi? di ia|algoritm\w*|biometri\w*|2024/1689|(?-i:AI))\b", re.I)
+DIGITAL_TERMS = re.compile(r"\b(gdpr|rgpd|privacy|data protection|protezione dei dati|data act|data governance act|digital services act|digital markets act|digital omnibus|digital fairness act|digital rulebook|eprivacy|nis\s?2|cybersecurity|cyber security|sicurezza informatica|cyber resilience act|data breach|violazione dei dati|regolamentazione digitale|normativa digitale|digital regulation|digital legislation|piattaforme digitali|mercati digitali|proposta legislativa.{0,35}digital|digital.{0,35}legislative proposal|2016/679|2023/2854|2022/2065|2022/1925|2022/2555)\b", re.I)
 ACT_PATTERNS = {
     "AI Act": r"\b(ai act|artificial intelligence act|regolamento.{0,20}intelligenza artificiale|2024/1689)\b",
     "GDPR": r"\b(gdpr|rgpd|2016/679|general data protection regulation)\b",
@@ -28,6 +30,8 @@ ACT_PATTERNS = {
     "DSA": r"\b(digital services act|2022/2065|\bdsa\b)\b",
     "DMA": r"\b(digital markets act|2022/1925|\bdma\b)\b",
     "NIS2": r"\b(nis2|nis 2|2022/2555)\b",
+    "Cyber Resilience Act": r"\b(cyber resilience act|2024/2847)\b",
+    "Data Governance Act": r"\b(data governance act|2022/868)\b",
 }
 LOG = logging.getLogger("radar")
 
@@ -47,18 +51,22 @@ def plain(text: str, limit: int = 1600) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]*>", " ", text or "")).strip()[:limit]
 
 
-def fetch_sources() -> list[dict]:
+def fetch_sources(statuses: dict | None = None) -> list[dict]:
     sources = json.loads(SOURCES.read_text(encoding="utf-8"))
     gathered = []
     for source in sources:
         if not source.get("enabled") or not source.get("url"):
             continue
+        checked_at = datetime.now(timezone.utc).isoformat(timespec="seconds")
         try:
             response = requests.get(source["url"], timeout=25, headers={"User-Agent": "AI-Regulatory-Radar/1.0 (portfolio project)"})
             response.raise_for_status()
             feed = feedparser.parse(response.content)
             if not feed.entries:
                 raise ValueError("Feed vuoto o formato non riconosciuto")
+            if statuses is not None:
+                statuses[source["name"]] = {"status": "ok", "last_checked": checked_at,
+                                              "last_success": checked_at}
             count = 0
             for entry in feed.entries[:75]:
                 link = canonical_link(entry.get("link", ""))
@@ -66,7 +74,7 @@ def fetch_sources() -> list[dict]:
                     continue
                 title = plain(entry.get("title", ""), 350)
                 summary = plain(entry.get("summary", ""))
-                if not KEYWORDS.search(title + " " + summary):
+                if not is_relevant(title + " " + summary):
                     continue
                 published = entry.get("published_parsed") or entry.get("updated_parsed")
                 date = f"{published.tm_year:04d}-{published.tm_mon:02d}-{published.tm_mday:02d}" if published else ""
@@ -74,8 +82,12 @@ def fetch_sources() -> list[dict]:
                                  "published": date, "summary": summary, "link": link})
                 count += 1
             LOG.info("%s: %d voci pertinenti", source["name"], count)
-        except (requests.RequestException, ValueError, Exception) as exc:
+        except Exception as exc:
             LOG.warning("Fonte non disponibile (%s): %s", source["name"], exc)
+            if statuses is not None:
+                previous = statuses.get(source["name"], {})
+                statuses[source["name"]] = {"status": "error", "last_checked": checked_at,
+                                              "last_success": previous.get("last_success")}
     return gathered
 
 
@@ -83,6 +95,21 @@ def identify_acts(entry: dict) -> list[str]:
     """Etichette indicative solo da corrispondenze testuali, non analisi legale."""
     text = f"{entry.get('title', '')} {entry.get('summary', '')}"
     return [act for act, pattern in ACT_PATTERNS.items() if re.search(pattern, text, re.I)]
+
+
+def is_relevant(text: str) -> bool:
+    return bool(AI_TERMS.search(text) or DIGITAL_TERMS.search(text))
+
+
+def identify_areas(entry: dict) -> list[str]:
+    """Macroaree indicative: una notizia può essere pertinente a entrambe."""
+    text = f"{entry.get('title', '')} {entry.get('summary', '')}"
+    areas = []
+    if AI_TERMS.search(text):
+        areas.append("Intelligenza artificiale")
+    if DIGITAL_TERMS.search(text):
+        areas.append("Altre normative digitali")
+    return areas
 
 
 def digest_text(items: list[dict]) -> str:
@@ -123,17 +150,21 @@ def run(dry_run: bool = False, skip_notify: bool = False) -> int:
     DATA.parent.mkdir(parents=True, exist_ok=True)
     archive = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else []
     known = {item["id"] for item in archive}
-    fresh = [entry for entry in fetch_sources() if entry["id"] not in known]
+    statuses = json.loads(SOURCE_STATUS.read_text(encoding="utf-8")) if SOURCE_STATUS.exists() else {}
+    fresh = [entry for entry in fetch_sources(statuses) if entry["id"] not in known]
     fresh = list({entry["id"]: entry for entry in fresh}.values())
     LOG.info("Nuove voci: %d", len(fresh))
     if dry_run:
         return len(fresh)
+    SOURCE_STATUS.write_text(json.dumps(statuses, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for entry in fresh:
         entry["acts"] = identify_acts(entry)
+        entry["areas"] = identify_areas(entry)
         entry["seen_at"] = datetime.now(timezone.utc).isoformat()
     # Migrazione automatica dei dati della versione precedente, senza rifare il fetch.
     for entry in archive:
         entry["acts"] = identify_acts(entry)
+        entry["areas"] = identify_areas(entry)
         entry.pop("classification", None)
     archive = sorted(fresh + archive, key=lambda x: (x.get("published") or "", x.get("seen_at") or ""), reverse=True)
     DATA.write_text(json.dumps(archive, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
