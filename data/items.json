@@ -12,6 +12,48 @@
     ]
   },
   {
+    "id": "e13d9afda2b6014b2760",
+    "source": "Garante Privacy — News",
+    "title": "Intelligenza artificiale nelle scuole, OK del Garante privacy",
+    "published": "2026-11-16",
+    "summary": "",
+    "link": "https://www.gpdp.it/garante/doc.jsp?ID=Intelligenza artificiale nelle scuole, OK del Garante privacy",
+    "acts": [],
+    "seen_at": "2026-11-17T19:21:23.682919+00:00"
+  },
+  {
+    "id": "4790fdf5b3b46de46009",
+    "source": "Commissione europea — News",
+    "title": "Preliminary findings of Temu failing to counter sale of illegal products",
+    "published": "2026-11-16",
+    "summary": "The Commission has preliminarily found international e-commerce marketplace, Temu, in breach of the Digital Services Act, for its failure to put in place adequate measures to counter the sale of illegal products on its platform.",
+    "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2463",
+    "acts": [
+      "DSA"
+    ],
+    "seen_at": "2026-11-17T19:21:23.682806+00:00"
+  },
+  {
+    "id": "f3fa7392ba53cb8fd990",
+    "source": "Garante Privacy — News",
+    "title": "Facebook: il Garante Privacy sanziona Meta per 805 milioni di euro",
+    "published": "2026-11-14",
+    "summary": "- ENGLISH VERSION Facebook: il Garante privacy sanziona Meta per 805 milioni di euro Foto e video della galleria degli utenti Android usati senza un consenso specifico. Entro 60 giorni la funzione dovrà essere disattivata per impostazione predefinita...",
+    "link": "https://www.gpdp.it/garante/doc.jsp?ID=10321080",
+    "acts": [],
+    "seen_at": "2026-11-17T19:21:23.682971+00:00"
+  },
+  {
+    "id": "5a4500a8af27272626ec",
+    "source": "Garante Privacy — News",
+    "title": "RespiVirNet, Il Garante: \"Nessuna sospensione decisa da noi\"",
+    "published": "2026-11-13",
+    "summary": "RespiVirNet, Il Garante: \"Nessuna sospensione decisa da noi\" Il Garante Privacy precisa di non aver disposto alcuna sospensione dei flussi di dati di RespiVirNet: l’hanno decisa autonomamente Regioni e Province autonome. Dal 2012 è la legge che preve...",
+    "link": "https://www.gpdp.it/garante/doc.jsp?ID=10321055",
+    "acts": [],
+    "seen_at": "2026-11-17T19:21:23.683031+00:00"
+  },
+  {
     "id": "b0061d7d1ddd066d6c18",
     "source": "EDPB — News",
     "title": "EDPB supports use of other models of contractual clauses for onward transfers of personal data",
@@ -20,6 +62,16 @@
     "link": "https://www.edpb.europa.eu/news/edpb-supports-use-of-other-models-of-contractual-clauses-for-onward-transfers-of-personal-data_en",
     "seen_at": "2026-11-17T17:09:38.529878+00:00",
     "acts": []
+  },
+  {
+    "id": "e7732abcd54f3c77cce8",
+    "source": "Garante Privacy — News",
+    "title": "NEWSLETTER del 12 novembre 2026",
+    "published": "2026-11-12",
+    "summary": "NEWSLETTER N. 556 del 12 novembre 2026 Black Friday, consigli del Garante Privacy per acquisti più sicuri Illiceità del Ministero della Giustizia nel trattamento dati dei minori Centro radiologico di Matera, resi pubblici i dati dei pazienti Sanziona...",
+    "link": "https://www.gpdp.it/garante/doc.jsp?ID=10319176",
+    "acts": [],
+    "seen_at": "2026-11-17T19:21:23.683079+00:00"
   },
   {
     "id": "0129852f13ac8ae2de50",
@@ -54,6 +106,16 @@
     ]
   },
   {
+    "id": "ec547fb4a548d76e8d76",
+    "source": "Garante Privacy — News",
+    "title": "Intelligenza artificiale nella PA. Sì condizionato alla Provincia autonoma di Trento",
+    "published": "2026-11-10",
+    "summary": "",
+    "link": "https://www.gpdp.it/garante/doc.jsp?ID=10318565",
+    "acts": [],
+    "seen_at": "2026-11-17T19:21:23.683096+00:00"
+  },
+  {
     "id": "6298d9b275d4578eecb5",
     "source": "EDPB — News",
     "title": "Italian DPA fines Wind Tre EUR 1,7 million for data security failures affecting over 365 000 customers",
@@ -82,6 +144,28 @@
     "link": "https://www.edpb.europa.eu/news/italian-dpa-fines-poste-italiane-and-deutsche-bank-a-combined-eur-81-000-for-lack-of_en",
     "seen_at": "2026-11-17T17:09:38.529882+00:00",
     "acts": []
+  },
+  {
+    "id": "a2a048ac218795351099",
+    "source": "Commissione europea — News",
+    "title": "TikTok: preliminary findings on harmful “rabbit hole” effect",
+    "published": "2026-11-05",
+    "summary": "The European Commission has preliminarily found TikTok in breach of the Digital Services Act (DSA) for the so-called ‘rabbit hole effect' of its recommender system.",
+    "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2361",
+    "acts": [
+      "DSA"
+    ],
+    "seen_at": "2026-11-17T19:21:23.682863+00:00"
+  },
+  {
+    "id": "d9b14998a5874469b902",
+    "source": "Commissione europea — News",
+    "title": "Shaping Europe’s future through education and training",
+    "published": "2026-11-04",
+    "summary": "The education and skills package helps reverse the decline in basic skills and improve teaching and how digital tools and AI are used in education",
+    "link": "https://commission.europa.eu/news-and-media/news/shaping-europes-future-through-education-and-training-2026-11-05_en",
+    "acts": [],
+    "seen_at": "2026-11-17T19:21:23.682904+00:00"
   },
   {
     "id": "19e6bcc0f8e64328d786",
