@@ -1,7 +1,7 @@
-name: Daily regulatory radar
+name: Hourly regulatory radar
 on:
   schedule:
-    - cron: '20 7 * * *' # 07:20 UTC (orario italiano variabile con ora legale)
+    - cron: '17 * * * *' # Ogni ora, al minuto 17 UTC; l'avvio può subire ritardi.
   workflow_dispatch:
 permissions:
   contents: write
@@ -35,7 +35,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/items.json docs/index.html
+          git add data/items.json data/source_status.json docs/index.html
           if ! git diff --cached --quiet; then
             git commit -m "chore: refresh regulatory radar"
             git push
