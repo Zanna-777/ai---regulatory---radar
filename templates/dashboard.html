@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Monitoraggio delle novità ufficiali su AI Act, GDPR e normativa digitale europea">
-  <title>AI Regulatory Radar | EU Policy Intelligence</title>
+  <title>AI &amp; Digital Law | Osservatorio normativo europeo</title>
   <style>
     :root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#eaf0ff;background:#090e1b;color-scheme:dark}
     *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#162653 0,transparent 42%),#090e1b}
@@ -21,18 +21,20 @@
     .card p{color:#bdc9df;line-height:1.65;font-size:14px}.card a{color:#87e6cd;text-underline-offset:4px}.card footer{font-size:12px;color:#a1b1d0;margin-top:15px}
     .timeline{display:grid;gap:12px;margin-top:20px}.event{display:grid;grid-template-columns:115px 1fr;gap:16px;padding:18px 20px;background:#111a2f;border-left:3px solid #7ce5c8;border-radius:8px 14px 14px 8px}.event time{font-weight:750;color:#9ccaff}.event p{margin:5px 0 0;color:#a7b7d2;font-size:13px}.event a{color:#7ce5c8}
     .note{margin-top:34px;padding:20px 22px;border:1px solid #4b4a3b;background:#262416;border-radius:12px;color:#e5dbb1;font-size:13px;line-height:1.7}
+    .source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.source-card{padding:20px;border:1px solid #253453;background:#111a2f;border-radius:15px}.source-card h3{margin:0 0 9px;font-size:17px}.source-card p{color:#aab9d7;font-size:13px;line-height:1.6}.source-card a{color:#83e9ca}.state-ok{color:#83e9ca}.state-error{color:#ffc0c5}.state-idle{color:#b1bed4}
     .empty{padding:28px;color:#aab9d7;background:#111a2f;border:1px dashed #395071;border-radius:14px}.foot{padding-top:34px;color:#7e91b2;font-size:12px}
-    @media(max-width:700px){.grid,.metrics{grid-template-columns:1fr}.hero{padding-top:55px}.event{grid-template-columns:1fr;gap:5px}}
+    @media(max-width:700px){.grid,.metrics,.source-grid{grid-template-columns:1fr}.hero{padding-top:55px}.event{grid-template-columns:1fr;gap:5px}}
   </style>
 </head>
 <body><main>
-  <header><div class="logo"><span>◈</span> AI REGULATORY RADAR</div><div class="badge">EU POLICY INTELLIGENCE · PORTFOLIO PROJECT</div></header>
-  <section class="hero"><div class="eyebrow">Fonti istituzionali · Monitoraggio automatizzato gratuito</div><h1>La normativa AI.<br><span class="gradient">Fonti ufficiali, un unico radar.</span></h1>
-    <p class="subtitle">Un osservatorio indipendente che raccoglie le nuove pubblicazioni istituzionali su AI e tutela dei dati, con filtri tematici e collegamenti ai documenti originali. Nessuna sintesi AI o valutazione legale automatizzata.</p></section>
+  <header><div class="logo"><span>◈</span> AI &amp; DIGITAL LAW</div></header>
+  <section class="hero"><h1 class="gradient">AI &amp; Digital Law.</h1><p class="subtitle" style="font-size:clamp(19px,2.7vw,27px);color:#d4e2fb">L'evoluzione della normativa europea sull'intelligenza artificiale e sul digitale.</p>
+    <p class="subtitle">Un osservatorio indipendente che raccoglie le nuove pubblicazioni istituzionali su AI e tutela dei dati.</p></section>
   <div class="metrics"><div class="metric"><small>Notizie archiviate</small><strong id="count">0</strong></div><div class="metric"><small>Atti monitorati nella timeline</small><strong id="acts">0</strong></div><div class="metric"><small>Ultima generazione</small><strong style="font-size:18px" id="updated">__GENERATED_AT__</strong></div></div>
   <section><div class="section-header"><div><div class="eyebrow">Monitoraggio</div><h2>Ultimi aggiornamenti</h2></div><span class="muted">Solo notizie effettivamente raccolte</span></div>
-    <div class="controls"><input id="search" placeholder="Cerca per titolo o contenuto…" aria-label="Cerca notizie"><select id="act" aria-label="Filtra per tema"><option value="">Tutti i temi</option></select></div>
+    <div class="controls"><input id="search" placeholder="Cerca per titolo o contenuto…" aria-label="Cerca notizie"><select id="act" aria-label="Filtra per tema"><option value="">Tutti i temi</option></select><select id="source" aria-label="Filtra per fonte istituzionale"><option value="">Tutte le fonti</option></select></div>
     <div class="grid" id="news"></div></section>
+  <section style="margin-top:65px"><div class="section-header"><div><div class="eyebrow">Trasparenza</div><h2>Fonti monitorate</h2></div><span class="muted">Esiti dell'ultimo tentativo di lettura dei feed</span></div><div class="source-grid" id="sources"></div></section>
   <section style="margin-top:65px"><div class="section-header"><div><div class="eyebrow">Riferimenti temporali</div><h2>Timeline normativa</h2></div><select id="timelineFilter" aria-label="Filtra timeline"><option value="">Tutti gli atti</option></select></div><div id="timeline" class="timeline"></div></section>
   <div class="note"><strong>Nota metodologica e disclaimer.</strong> Questo sito è un progetto dimostrativo, non un servizio di consulenza legale. I temi sono attribuiti solo attraverso corrispondenze di parole chiave, quindi non rappresentano una qualificazione giuridica certa. Gli estratti provengono dai feed e non sono sintesi AI. Le date della timeline sono riferimenti tratti dai testi originari e potrebbero essere state modificate: controllare sempre la versione consolidata, gli atti successivi e la fonte ufficiale. Il monitoraggio dipende dalla disponibilità dei feed configurati e non garantisce copertura completa o aggiornamento in tempo reale.</div>
   <div class="foot">Generato automaticamente da Python · Fonti primarie collegate su ogni scheda · <span id="year"></span></div>
@@ -44,11 +46,14 @@ const node=(tag,cls,value)=>{const el=document.createElement(tag);if(cls)el.clas
 const link=(url,label)=>{const a=node('a','',label);if(/^https:\/\//.test(url)){a.href=url;a.target='_blank';a.rel='noopener noreferrer'}return a};
 const acts=[...new Set([...db.items.flatMap(x=>x.acts||[]),...db.milestones.map(x=>x.act)])].sort();
 for(const id of ['act','timelineFilter'])for(const a of acts){const option=node('option','',a);option.value=a;byId(id).append(option)}
+for(const name of [...new Set(db.items.map(x=>x.source))].sort()){const option=node('option','',name);option.value=name;byId('source').append(option)}
 text(byId('count'),db.items.length);text(byId('acts'),new Set(db.milestones.map(x=>x.act)).size);text(byId('year'),new Date().getFullYear());
-function renderNews(){const root=byId('news');root.replaceChildren();const q=byId('search').value.toLowerCase(),act=byId('act').value;
- const filtered=db.items.filter(x=>(!act||(x.acts||[]).includes(act))&&(`${x.title} ${x.summary||''} ${x.source}`.toLowerCase().includes(q)));
+function renderNews(){const root=byId('news');root.replaceChildren();const q=byId('search').value.toLowerCase(),act=byId('act').value,source=byId('source').value;
+ const filtered=db.items.filter(x=>(!act||(x.acts||[]).includes(act))&&(!source||x.source===source)&&(`${x.title} ${x.summary||''} ${x.source}`.toLowerCase().includes(q)));
  if(!filtered.length){root.append(node('div','empty','Nessuna notizia per questi filtri. Se il progetto è appena stato creato, esegui la pipeline per popolare l’archivio.'));return}
- for(const item of filtered.slice(0,100)){const card=node('article','card'),row=node('div','row');for(const act of (item.acts||[]))row.append(node('span','pill',act));if(!row.childNodes.length)row.append(node('span','pill','Tema non identificato'));card.append(row,node('h3','',item.title));if(item.summary)card.append(node('p','',item.summary));card.append(link(item.link,'Leggi la pubblicazione ufficiale ↗'),node('footer','',`${item.source} · ${item.published||'Data non disponibile'}`));root.append(card)} }
+ for(const item of filtered.slice(0,100)){const card=node('article','card'),row=node('div','row');for(const act of (item.acts||[]))row.append(node('span','pill',act));if(row.childNodes.length)card.append(row);card.append(node('h3','',item.title));if(item.summary)card.append(node('p','',item.summary));card.append(link(item.link,'Leggi la pubblicazione ufficiale ↗'),node('footer','',`${item.source} · ${item.published||'Data non disponibile'}`));root.append(card)} }
+function when(value){if(!value)return 'Non disponibile';const date=new Date(value);return Number.isNaN(date.getTime())?'Non disponibile':date.toLocaleString('it-IT',{timeZone:'Europe/Rome',dateStyle:'short',timeStyle:'short'})+' (ora italiana)'}
+function renderSources(){const root=byId('sources');root.replaceChildren();for(const source of db.sources||[]){const s=(db.source_status||{})[source.name]||{};const enabled=Boolean(source.enabled&&source.url);const label=!enabled?'Non attiva / da integrare':s.status==='ok'?'Feed raggiunto':s.status==='error'?'Ultimo controllo non riuscito':'Controllo non ancora registrato';const state=!enabled?'state-idle':s.status==='ok'?'state-ok':s.status==='error'?'state-error':'state-idle';const card=node('article','source-card');card.append(node('h3','',source.name),node('strong',state,label),node('p','',`Ultimo controllo: ${enabled?when(s.last_checked):'—'}`));if(enabled)card.append(node('p','',`Ultima lettura riuscita: ${when(s.last_success)}`));card.append(link(source.homepage,'Visita il sito ufficiale ↗'));root.append(card)}}
 function renderTimeline(){const root=byId('timeline');root.replaceChildren();const act=byId('timelineFilter').value;for(const e of db.milestones.filter(e=>!act||e.act===act).sort((a,b)=>a.date.localeCompare(b.date))){const article=node('article','event'),body=node('div');body.append(node('strong','',`${e.act} · ${e.title}`),node('p','',`Stato: ${e.status} · `),link(e.url,'Testo ufficiale ↗'));article.append(node('time','',e.date),body);root.append(article)}}
-for(const id of ['search','act'])byId(id).addEventListener('input',renderNews);byId('timelineFilter').addEventListener('change',renderTimeline);renderNews();renderTimeline();
+for(const id of ['search','act','source'])byId(id).addEventListener('input',renderNews);byId('timelineFilter').addEventListener('change',renderTimeline);renderNews();renderSources();renderTimeline();
 </script></body></html>
