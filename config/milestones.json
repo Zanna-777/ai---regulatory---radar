@@ -1,0 +1,9 @@
+[
+  {"date":"2018-05-25","act":"GDPR","title":"Applicazione del GDPR","status":"storico","url":"https://eur-lex.europa.eu/eli/reg/2016/679/oj"},
+  {"date":"2024-08-01","act":"AI Act","title":"Entrata in vigore del regolamento AI Act","status":"storico","url":"https://eur-lex.europa.eu/eli/reg/2024/1689/oj"},
+  {"date":"2025-02-02","act":"AI Act","title":"Applicazione delle prime disposizioni (art. 113)","status":"storico","url":"https://eur-lex.europa.eu/eli/reg/2024/1689/oj"},
+  {"date":"2025-08-02","act":"AI Act","title":"Applicazione di ulteriori disposizioni (art. 113)","status":"storico","url":"https://eur-lex.europa.eu/eli/reg/2024/1689/oj"},
+  {"date":"2025-09-12","act":"Data Act","title":"Applicazione generale del Data Act, fatte salve le eccezioni","status":"storico","url":"https://eur-lex.europa.eu/eli/reg/2023/2854/oj"},
+  {"date":"2026-08-02","act":"AI Act","title":"Data prevista dal testo originario per l'applicazione generale, con eccezioni: verificare eventuali modifiche","status":"verificare","url":"https://eur-lex.europa.eu/eli/reg/2024/1689/oj"},
+  {"date":"2027-08-02","act":"AI Act","title":"Data prevista dal testo originario per alcune disposizioni dell'art. 113: verificare eventuali modifiche","status":"verificare","url":"https://eur-lex.europa.eu/eli/reg/2024/1689/oj"}
+]

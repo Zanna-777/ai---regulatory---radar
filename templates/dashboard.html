@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Monitoraggio delle novità ufficiali su AI Act, GDPR e normativa digitale europea">
+  <title>AI Regulatory Radar | EU Policy Intelligence</title>
+  <style>
+    :root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#eaf0ff;background:#090e1b;color-scheme:dark}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#162653 0,transparent 42%),#090e1b}
+    main{max-width:1140px;margin:auto;padding:30px 24px 80px}header{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+    .logo{font-weight:800;letter-spacing:.07em;font-size:15px}.logo span{color:#83e9ca}.badge{padding:7px 11px;border:1px solid #354466;border-radius:40px;color:#b7caec;font-size:12px}
+    .hero{padding:86px 0 43px}h1{font-size:clamp(42px,7vw,74px);letter-spacing:-.055em;line-height:1.04;margin:13px 0 17px;max-width:850px}
+    .gradient{background:linear-gradient(95deg,#82e8ca,#9bc4ff);background-clip:text;color:transparent}.subtitle{color:#aab9d7;font-size:17px;line-height:1.7;max-width:760px}
+    .eyebrow{letter-spacing:.16em;color:#85e3c8;text-transform:uppercase;font-size:12px;font-weight:800}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:32px 0 44px}.metric,.card,.panel{background:#111a2f;border:1px solid #253453;border-radius:18px}
+    .metric{padding:23px}.metric strong{font-size:32px;display:block;margin-top:7px}.metric small,.muted{color:#9caccb}
+    h2{font-size:27px;letter-spacing:-.025em;margin:0 0 9px}.section-header{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px;flex-wrap:wrap}
+    .controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0}select,input{background:#0c1427;color:#eaf0ff;border:1px solid #3b4c6d;border-radius:11px;padding:12px 13px;font:inherit}input{flex:1;min-width:200px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{padding:24px}.card h3{margin:12px 0;line-height:1.4;font-size:19px}.row{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .pill{font-size:11px;font-weight:750;letter-spacing:.02em;padding:6px 9px;border-radius:8px;background:#233557;color:#c2d7ff}.pill.high{background:#582c38;color:#ffc0c5}.pill.low{background:#183c37;color:#97ead0}
+    .card p{color:#bdc9df;line-height:1.65;font-size:14px}.card a{color:#87e6cd;text-underline-offset:4px}.card footer{font-size:12px;color:#a1b1d0;margin-top:15px}
+    .timeline{display:grid;gap:12px;margin-top:20px}.event{display:grid;grid-template-columns:115px 1fr;gap:16px;padding:18px 20px;background:#111a2f;border-left:3px solid #7ce5c8;border-radius:8px 14px 14px 8px}.event time{font-weight:750;color:#9ccaff}.event p{margin:5px 0 0;color:#a7b7d2;font-size:13px}.event a{color:#7ce5c8}
+    .note{margin-top:34px;padding:20px 22px;border:1px solid #4b4a3b;background:#262416;border-radius:12px;color:#e5dbb1;font-size:13px;line-height:1.7}
+    .empty{padding:28px;color:#aab9d7;background:#111a2f;border:1px dashed #395071;border-radius:14px}.foot{padding-top:34px;color:#7e91b2;font-size:12px}
+    @media(max-width:700px){.grid,.metrics{grid-template-columns:1fr}.hero{padding-top:55px}.event{grid-template-columns:1fr;gap:5px}}
+  </style>
+</head>
+<body><main>
+  <header><div class="logo"><span>◈</span> AI REGULATORY RADAR</div><div class="badge">EU POLICY INTELLIGENCE · PORTFOLIO PROJECT</div></header>
+  <section class="hero"><div class="eyebrow">Official sources · AI-assisted analysis</div><h1>La normativa AI.<br><span class="gradient">Chiara, tracciabile, aggiornata.</span></h1>
+    <p class="subtitle">Un osservatorio sperimentale che raccoglie aggiornamenti dalle istituzioni europee, ne organizza l'impatto potenziale e rimanda sempre ai documenti ufficiali.</p></section>
+  <div class="metrics"><div class="metric"><small>Notizie archiviate</small><strong id="count">0</strong></div><div class="metric"><small>Atti monitorati nella timeline</small><strong id="acts">0</strong></div><div class="metric"><small>Ultima generazione</small><strong style="font-size:18px" id="updated">__GENERATED_AT__</strong></div></div>
+  <section><div class="section-header"><div><div class="eyebrow">Monitoraggio</div><h2>Ultimi aggiornamenti</h2></div><span class="muted">Solo notizie effettivamente raccolte</span></div>
+    <div class="controls"><input id="search" placeholder="Cerca per titolo o contenuto…" aria-label="Cerca notizie"><select id="act" aria-label="Filtra per atto"><option value="">Tutti gli atti</option></select><select id="urgency" aria-label="Filtra per urgenza"><option value="">Tutte le priorità</option><option>alta</option><option>media</option><option>bassa</option><option>da_verificare</option></select></div>
+    <div class="grid" id="news"></div></section>
+  <section style="margin-top:65px"><div class="section-header"><div><div class="eyebrow">Riferimenti temporali</div><h2>Timeline normativa</h2></div><select id="timelineFilter" aria-label="Filtra timeline"><option value="">Tutti gli atti</option></select></div><div id="timeline" class="timeline"></div></section>
+  <div class="note"><strong>Nota metodologica e disclaimer.</strong> Questo sito è un progetto dimostrativo, non un servizio di consulenza legale. I riepiloghi AI possono contenere errori e richiedono verifica umana. Le date della timeline sono riferimenti tratti dai testi originari e potrebbero essere state modificate: controllare sempre la versione consolidata, gli atti successivi e la fonte ufficiale. L'urgenza è una classificazione editoriale, non un giudizio sulla sussistenza di obblighi. Il monitoraggio dipende dalla disponibilità dei feed configurati e non garantisce copertura completa o aggiornamento in tempo reale.</div>
+  <div class="foot">Generato automaticamente da Python · Fonti primarie collegate su ogni scheda · <span id="year"></span></div>
+</main><script id="dataset" type="application/json">__DATA_JSON__</script><script>
+const db=JSON.parse(document.getElementById('dataset').textContent);
+const byId=id=>document.getElementById(id);
+const text=(element,value)=>{element.textContent=value??'';return element};
+const node=(tag,cls,value)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(value!==undefined)el.textContent=value;return el};
+const link=(url,label)=>{const a=node('a','',label);if(/^https:\/\//.test(url)){a.href=url;a.target='_blank';a.rel='noopener noreferrer'}return a};
+const acts=[...new Set([...db.items.map(x=>x.classification?.act||'Altro'),...db.milestones.map(x=>x.act)])].sort();
+for(const id of ['act','timelineFilter'])for(const a of acts){const option=node('option','',a);option.value=a;byId(id).append(option)}
+text(byId('count'),db.items.length);text(byId('acts'),new Set(db.milestones.map(x=>x.act)).size);text(byId('year'),new Date().getFullYear());
+function renderNews(){const root=byId('news');root.replaceChildren();const q=byId('search').value.toLowerCase(),act=byId('act').value,urgency=byId('urgency').value;
+ const filtered=db.items.filter(x=>(!act||x.classification?.act===act)&&(!urgency||x.classification?.urgency===urgency)&&(`${x.title} ${x.summary} ${x.classification?.summary_it}`.toLowerCase().includes(q)));
+ if(!filtered.length){root.append(node('div','empty','Nessuna notizia per questi filtri. Se il progetto è appena stato creato, esegui la pipeline per popolare l’archivio.'));return}
+ for(const item of filtered.slice(0,100)){const c=item.classification||{},card=node('article','card'),row=node('div','row');row.append(node('span','pill',c.act||'Altro'),node('span','pill '+(c.urgency==='alta'?'high':c.urgency==='bassa'?'low':''),'Priorità: '+(c.urgency||'da_verificare')));card.append(row,node('h3','',item.title),node('p','',c.summary_it||item.summary));card.append(node('p','',`Cosa cambia: ${c.what_changes||'Da verificare'}`),node('p','',`A chi si applica: ${c.applies_to||'Da verificare'}`),link(item.link,'Consulta fonte ufficiale ↗'),node('footer','',`${item.source} · ${item.published||'Data non disponibile'} · Revisione richiesta`));root.append(card)} }
+function renderTimeline(){const root=byId('timeline');root.replaceChildren();const act=byId('timelineFilter').value;for(const e of db.milestones.filter(e=>!act||e.act===act).sort((a,b)=>a.date.localeCompare(b.date))){const article=node('article','event'),body=node('div');body.append(node('strong','',`${e.act} · ${e.title}`),node('p','',`Stato: ${e.status} · `),link(e.url,'Testo ufficiale ↗'));article.append(node('time','',e.date),body);root.append(article)}}
+for(const id of ['search','act','urgency'])byId(id).addEventListener('input',renderNews);byId('timelineFilter').addEventListener('change',renderTimeline);renderNews();renderTimeline();
+</script></body></html>

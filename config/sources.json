@@ -1,0 +1,35 @@
+[
+  {
+    "name": "EDPB — News",
+    "url": "https://www.edpb.europa.eu/feed/news_it",
+    "homepage": "https://www.edpb.europa.eu/news_it",
+    "enabled": true
+  },
+  {
+    "name": "EUR-Lex — Legislazione PE/Consiglio",
+    "url": "https://eur-lex.europa.eu/IT/display-feed.rss?rssId=162",
+    "homepage": "https://eur-lex.europa.eu/content/help/search/predefined-rss.html?locale=it",
+    "enabled": true
+  },
+  {
+    "name": "EUR-Lex — Alert AI personalizzato",
+    "url": "",
+    "homepage": "https://eur-lex.europa.eu/content/help/my-eurlex/my-rss-feeds.html?locale=it",
+    "enabled": false,
+    "note": "Creare un alert da una ricerca AI Act / intelligenza artificiale nel proprio account EUR-Lex e incollare qui l'RSS."
+  },
+  {
+    "name": "Commissione europea / AI Office",
+    "url": "",
+    "homepage": "https://digital-strategy.ec.europa.eu/en/policies/ai-office",
+    "enabled": false,
+    "note": "Aggiungere solo un feed ufficiale verificato; non è configurato uno scraping fragile."
+  },
+  {
+    "name": "Garante Privacy",
+    "url": "",
+    "homepage": "https://www.garanteprivacy.it/gpdp-rss",
+    "enabled": false,
+    "note": "Verificare l'URL del singolo feed offerto dal sito prima di abilitarlo."
+  }
+]
