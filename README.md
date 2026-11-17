@@ -1,9 +1,9 @@
-# ◈ AI Regulatory Radar
+# ◈ AI & Digital Law
 
 **Free, automated monitoring of EU AI and digital regulation**  
 Python · RSS/Atom · GitHub Actions · GitHub Pages · Data Processing
 
-AI Regulatory Radar is a personal **RegTech portfolio project** that collects official institutional publications, stores an auditable archive, and automatically generates a searchable Italian dashboard. It uses **no AI model, API key, or paid summarization service**.
+AI & Digital Law (repository: `ai---regulatory---radar`) is a personal **RegTech portfolio project** that collects official institutional publications, stores an auditable archive, and automatically generates a searchable Italian dashboard. It uses **no AI model, API key, or paid summarization service**.
 
 > **Not legal advice.** The software does not interpret legal obligations or assign legal urgency. Always consult original documents and their latest consolidated versions.
 
@@ -14,7 +14,8 @@ AI Regulatory Radar is a personal **RegTech portfolio project** that collects of
 - Keyword filtering to screen relevance to AI, privacy and EU digital rules.
 - Simple **keyword-based topic tags**, e.g. AI Act, GDPR or Data Act. Tags are indicative and can be missing or incorrect; they are **not legal analysis**.
 - Stable URL-derived IDs for deduplication and JSON archival in `data/items.json`.
-- Responsive dashboard in `docs/index.html` with search, topic filters and curated regulatory timeline.
+- Responsive dashboard in `docs/index.html` with sidebar navigation, source/topic filters, an interactive monthly chart, expandable feed excerpts and a curated regulatory timeline.
+- Filter by institutional source and an official-source directory showing the latest feed-check result and timestamps.
 - Optional Telegram or SMTP email notifications for newly found entries.
 - Original official link, title, feed excerpt, date (if provided) and institution retained.
 
@@ -78,6 +79,7 @@ For Telegram, set GitHub Actions repository secrets `TELEGRAM_BOT_TOKEN` and `TE
 config/sources.json            Official RSS source registry
 config/milestones.json         Curated reference timeline
 data/items.json                Archived publications
+data/source_status.json        Latest feed checks and outcomes
 docs/index.html                Generated dashboard
 src/pipeline.py                Collector, filtering and alerts
 src/build_dashboard.py         Static website generator
