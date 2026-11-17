@@ -12,6 +12,9 @@
     ],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -26,6 +29,10 @@
     "areas": [
       "Intelligenza artificiale",
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Intelligenza artificiale",
+      "Privacy"
     ]
   },
   {
@@ -41,6 +48,9 @@
     "seen_at": "2026-11-17T19:21:23.682806+00:00",
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Piattaforme digitali"
     ]
   },
   {
@@ -54,6 +64,9 @@
     "seen_at": "2026-11-17T19:21:23.682971+00:00",
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -67,6 +80,9 @@
     "seen_at": "2026-11-17T19:21:23.683031+00:00",
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -80,6 +96,9 @@
     "acts": [],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -93,6 +112,9 @@
     "seen_at": "2026-11-17T19:21:23.683079+00:00",
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -104,7 +126,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2549",
     "seen_at": "2026-11-17T17:09:38.529892+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "b937081ecdb248b58102",
@@ -115,7 +138,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2551",
     "seen_at": "2026-11-17T17:09:38.529891+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "5910400f6a741887f26d",
@@ -130,6 +154,9 @@
     ],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -143,7 +170,10 @@
     "areas": [
       "Altre normative digitali"
     ],
-    "seen_at": "2026-11-17T20:52:21.206944+00:00"
+    "seen_at": "2026-11-17T20:52:21.206944+00:00",
+    "topics": [
+      "Privacy"
+    ]
   },
   {
     "id": "8043026d45311c07d99b",
@@ -156,7 +186,8 @@
     "areas": [
       "Altre normative digitali"
     ],
-    "seen_at": "2026-11-17T20:52:21.206789+00:00"
+    "seen_at": "2026-11-17T20:52:21.206789+00:00",
+    "topics": []
   },
   {
     "id": "ec547fb4a548d76e8d76",
@@ -168,6 +199,9 @@
     "acts": [],
     "seen_at": "2026-11-17T19:21:23.683096+00:00",
     "areas": [
+      "Intelligenza artificiale"
+    ],
+    "topics": [
       "Intelligenza artificiale"
     ]
   },
@@ -182,6 +216,10 @@
     "acts": [],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy",
+      "Cybersecurity"
     ]
   },
   {
@@ -195,6 +233,9 @@
     "acts": [],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -208,6 +249,9 @@
     "acts": [],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -223,6 +267,9 @@
     "seen_at": "2026-11-17T19:21:23.682863+00:00",
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Piattaforme digitali"
     ]
   },
   {
@@ -235,6 +282,9 @@
     "acts": [],
     "seen_at": "2026-11-17T19:21:23.682904+00:00",
     "areas": [
+      "Intelligenza artificiale"
+    ],
+    "topics": [
       "Intelligenza artificiale"
     ]
   },
@@ -249,6 +299,9 @@
     "acts": [],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -260,7 +313,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026R2387",
     "seen_at": "2026-11-17T17:09:38.529893+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "66f4b2fc1d303efe2a5a",
@@ -271,7 +325,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2458",
     "seen_at": "2026-11-17T17:09:38.529897+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "ae048602562216eb3c3d",
@@ -282,7 +337,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2472",
     "seen_at": "2026-11-17T17:09:38.529895+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "07d79a4391dbb91ac958",
@@ -293,7 +349,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026L2450",
     "seen_at": "2026-11-17T17:09:38.529894+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "b541335fbc441ac863de",
@@ -304,7 +361,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026D2457",
     "seen_at": "2026-11-17T17:09:38.529898+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "9a128a42c5bfcd8e7103",
@@ -315,7 +373,8 @@
     "link": "https://eur-lex.europa.eu/./legal-content/AUTO?uri=CELEX:32026R2446",
     "seen_at": "2026-11-17T17:09:38.529899+00:00",
     "acts": [],
-    "areas": []
+    "areas": [],
+    "topics": []
   },
   {
     "id": "41856578098c8a597f99",
@@ -328,7 +387,10 @@
     "areas": [
       "Altre normative digitali"
     ],
-    "seen_at": "2026-11-17T20:52:21.206873+00:00"
+    "seen_at": "2026-11-17T20:52:21.206873+00:00",
+    "topics": [
+      "Cybersecurity"
+    ]
   },
   {
     "id": "d1fefb7e3a67472b6a06",
@@ -343,6 +405,10 @@
     ],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy",
+      "Piattaforme digitali"
     ]
   },
   {
@@ -358,6 +424,9 @@
     ],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   },
   {
@@ -371,6 +440,9 @@
     "acts": [],
     "areas": [
       "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
     ]
   }
 ]
