@@ -1,5 +1,56 @@
 [
   {
+    "id": "40bd1a2e7292cbbbdf03",
+    "source": "EDPB — News",
+    "title": "The Norwegian Data Protection Authority fines Social Garden AS for publishing personal data without a lawful basis",
+    "published": "2026-11-19",
+    "summary": "Background information Date of final decision: 13/11/2026 Cross-border case One-Stop-Shop Procedure: the decision was taken by national supervisory authorities following the One-Stop-Shop cooperation procedure (OSS) If cross-border, LSA: Norway and CSAs: Sweden, Denmark Controller: Social Garden AS Legal References: Article 6 (Lawfulness of processing), Article 9 (Processing of special categories of personal data) Decision: Administrative fine Key words: Basic principles, Legal basis, Fines, Online platforms, Cooperation between authorities Summary of the Decision Origin of the case The company operates several dating websites, including skeiv.no, kristendate.no, kristendate.se and kristendate.dk, targeting queer and religious target groups. In 2024, the Data Protection Authority received a complaint about the company from a user of skeiv.no. The complainant discovered that members’ photos and other profile information were publicly accessible to anyone visiting the website. Key Findings In the investigation, the Data Protection Authority considered whether this involved the processing of special categories of personal data and whether valid consent had been obtained for the processing. The Data Protection Authority found that the company had published the complainant’s and other members’ photos and profile information (including names, ages and places of residence) on the homepages of its dating websites without a valid lawful basis for processing the data. Further, the Data Protection Authority found that the company’s consent mechanism did not meet the requirements of th",
+    "link": "https://www.edpb.europa.eu/news/the-norwegian-data-protection-authority-fines-social-garden-as-for-publishing-personal-data_en",
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy",
+      "Piattaforme digitali"
+    ],
+    "seen_at": "2026-11-19T10:23:58.933334+00:00"
+  },
+  {
+    "id": "2ac3cb93dbaec7b9eff2",
+    "source": "EDPB — News",
+    "title": "EDPB and DPAs from countries and organisation with EU adequacy decision take stock of progress and set 2027 priorities",
+    "published": "2026-11-19",
+    "summary": "Brussels, 19 November - The EDPB met on 17 November with Commissioners and representatives of the Data Protection Authorities (DPAs) from the countries and the international organisation with an EU adequacy decision. This gathering marked the third of its kind, following the first one in October 2024 and the second one in December 2025 . The meeting was an opportunity to discuss the joint activities carried out in 2026 and identify the way forward for 2027. “The authorities in this network are essential partners for the EDPB: together we can advance privacy and data protection on a global scale. The engagement at this meeting reflects our collective commitment to addressing today's most pressing data protection challenges. With technology operating on a global scale, we must work together to address the shared issues we face in different parts of the world. I look forward to continuing and strengthening our cooperation.” EDPB Chair, Anu Talus Focus for 2027 The network has identified two priority topics for knowledge-sharing in 2027: Wearable devices with a special focus on smart glasses Privacy preserving age assurance The participants also agreed to continue discussing enforcement cooperation. Background An adequacy decision is a key-mechanism in EU data protection legislation which allows free flow of personal data from Europe to third countries or an international organisation offering an adequate level of data protection.* To date, the following countries and international organisation benefit from this: Andorra, Argentina, Brazil, Canada, Faroe Islands, Guernsey, Isra",
+    "link": "https://www.edpb.europa.eu/news/edpb-and-dpas-from-countries-and-organisation-with-eu-adequacy-decision-take-stock-of-progress_en",
+    "acts": [],
+    "areas": [
+      "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
+    ],
+    "seen_at": "2026-11-19T10:23:58.932477+00:00"
+  },
+  {
+    "id": "6bd1cd41bb9f26642907",
+    "source": "EDPB — News",
+    "title": "Norwegian DPA fines private individual for credit check and publication of personal data without a lawful basis",
+    "published": "2026-11-19",
+    "summary": "Background information Date of final decision: 16/10/2026 National case Controller: Private individual Legal References: Article 6(1) (Lawfulness of processing) Decision: Administrative fine Key words: Legal basis, Fines, GDPR enforcement, Basic principles Summary of the Decision Origin of the case The Data Protection Authority received a complaint from an individual who had been subject to a credit check carried out by a private individual. The individual had access to a credit information service through their work and had used it to carry out a credit check on the complainant for personal purposes. The information obtained from the credit check was subsequently published in various Facebook groups. Key Findings The Data Protection Authority concluded that the credit check was carried out for personal purposes and was unrelated to the work of the individual concerned. The Data Protection Authority therefore concluded that neither the credit check nor the subsequent publication of the information had a lawful basis under Article 6(1) of the GDPR. Decision The Data Protection Authority issued a decision imposing an administrative fine of EUR 940 on the individual for carrying out an unlawful credit check and publishing the information. For further information: Norwegian Press Release: Gebyr for kredittvurdering og publisering av personopplysningar utan rettsleg grunnlag English Press Release: Fine for credit check and publication of personal data without a lawful basis &nbsp;",
+    "link": "https://www.edpb.europa.eu/news/norwegian-dpa-fines-private-individual-for-credit-check-and-publication-of-personal-data_en",
+    "acts": [
+      "GDPR"
+    ],
+    "areas": [
+      "Altre normative digitali"
+    ],
+    "topics": [
+      "Privacy"
+    ],
+    "seen_at": "2026-11-19T10:23:58.931524+00:00"
+  },
+  {
     "id": "0540d5696c4be664fe13",
     "source": "Garante Privacy — News",
     "title": "L’Autorità Garante Privacy italiana eletta nel Comitato direttivo della Global Privacy Assembly",
