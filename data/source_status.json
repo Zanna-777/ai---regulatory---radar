@@ -1,27 +1,27 @@
 {
   "EDPB — News": {
     "status": "ok",
-    "last_checked": "2026-11-22T17:01:48+00:00",
-    "last_success": "2026-11-22T17:01:48+00:00"
+    "last_checked": "2026-11-22T17:56:28+00:00",
+    "last_success": "2026-11-22T17:56:28+00:00"
   },
   "EUR-Lex — Legislazione PE/Consiglio": {
     "status": "ok",
-    "last_checked": "2026-11-22T17:01:49+00:00",
-    "last_success": "2026-11-22T17:01:49+00:00"
+    "last_checked": "2026-11-22T17:56:29+00:00",
+    "last_success": "2026-11-22T17:56:29+00:00"
   },
   "Commissione europea — News": {
     "status": "ok",
-    "last_checked": "2026-11-22T17:01:49+00:00",
-    "last_success": "2026-11-22T17:01:49+00:00"
+    "last_checked": "2026-11-22T17:56:29+00:00",
+    "last_success": "2026-11-22T17:56:29+00:00"
   },
   "Consiglio dell'UE — Comunicati stampa": {
     "status": "ok",
-    "last_checked": "2026-11-22T17:01:50+00:00",
-    "last_success": "2026-11-22T17:01:50+00:00"
+    "last_checked": "2026-11-22T17:56:30+00:00",
+    "last_success": "2026-11-22T17:56:30+00:00"
   },
   "Garante Privacy — News": {
     "status": "ok",
-    "last_checked": "2026-11-22T17:01:51+00:00",
-    "last_success": "2026-11-22T17:01:51+00:00"
+    "last_checked": "2026-11-22T17:56:30+00:00",
+    "last_success": "2026-11-22T17:56:30+00:00"
   }
 }
