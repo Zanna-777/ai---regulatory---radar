@@ -30,7 +30,7 @@
     "url": "https://www.consilium.europa.eu/en/rss/pressreleases.ashx",
     "homepage": "https://www.consilium.europa.eu/en/about-site/rss/",
     "enabled": true,
-    "note": "Feed RSS ufficiale dei comunicati stampa del Consiglio dell'UE; le notizie digitali sono filtrate per parole chiave. Il primo controllo automatico ne verificherà la raggiungibilità."
+    "note": "Feed RSS ufficiale dei comunicati stampa del Consiglio dell'UE; le notizie digitali sono filtrate per parola chiave. Il primo controllo automatico ne verificherà la raggiungibilità."
   },
   {
     "name": "Garante Privacy — News",
@@ -38,5 +38,19 @@
     "homepage": "https://www.garanteprivacy.it/gpdp-rss",
     "enabled": true,
     "note": "Feed RSS news del sito istituzionale del Garante."
+  },
+  {
+    "name": "EUR-Lex — Proposte della Commissione",
+    "url": "https://eur-lex.europa.eu/IT/display-feed.rss?rssId=161",
+    "homepage": "https://eur-lex.europa.eu/content/help/search/predefined-rss.html?locale=it",
+    "enabled": true,
+    "note": "Feed ufficiale di proposte della Commissione e documenti correlati; il collettore seleziona le pubblicazioni pertinenti ad AI e normativa digitale."
+  },
+  {
+    "name": "EUR-Lex — Gazzetta ufficiale, serie L",
+    "url": "https://eur-lex.europa.eu/IT/display-feed.rss?rssId=222",
+    "homepage": "https://eur-lex.europa.eu/content/help/search/predefined-rss.html?locale=it",
+    "enabled": true,
+    "note": "Feed ufficiale degli atti pubblicati nella serie L della Gazzetta ufficiale; il collettore applica il filtro di pertinenza digitale."
   }
 ]
