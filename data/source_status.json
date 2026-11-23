@@ -1,37 +1,37 @@
 {
   "EDPB — News": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:32+00:00",
-    "last_success": "2026-11-22T23:56:32+00:00"
+    "last_checked": "2026-11-23T01:35:54+00:00",
+    "last_success": "2026-11-23T01:35:54+00:00"
   },
   "EUR-Lex — Legislazione PE/Consiglio": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:33+00:00",
-    "last_success": "2026-11-22T23:56:33+00:00"
+    "last_checked": "2026-11-23T01:35:55+00:00",
+    "last_success": "2026-11-23T01:35:55+00:00"
   },
   "Commissione europea — News": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:33+00:00",
-    "last_success": "2026-11-22T23:56:33+00:00"
+    "last_checked": "2026-11-23T01:35:55+00:00",
+    "last_success": "2026-11-23T01:35:55+00:00"
   },
   "Consiglio dell'UE — Comunicati stampa": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:34+00:00",
-    "last_success": "2026-11-22T23:56:34+00:00"
+    "last_checked": "2026-11-23T01:35:56+00:00",
+    "last_success": "2026-11-23T01:35:56+00:00"
   },
   "Garante Privacy — News": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:34+00:00",
-    "last_success": "2026-11-22T23:56:34+00:00"
+    "last_checked": "2026-11-23T01:35:56+00:00",
+    "last_success": "2026-11-23T01:35:56+00:00"
   },
   "EUR-Lex — Proposte della Commissione": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:36+00:00",
-    "last_success": "2026-11-22T23:56:36+00:00"
+    "last_checked": "2026-11-23T01:35:58+00:00",
+    "last_success": "2026-11-23T01:35:58+00:00"
   },
   "EUR-Lex — Gazzetta ufficiale, serie L": {
     "status": "ok",
-    "last_checked": "2026-11-22T23:56:36+00:00",
-    "last_success": "2026-11-22T23:56:36+00:00"
+    "last_checked": "2026-11-23T01:35:59+00:00",
+    "last_success": "2026-11-23T01:35:59+00:00"
   }
 }
