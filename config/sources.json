@@ -47,10 +47,31 @@
     "note": "Feed ufficiale di proposte della Commissione e documenti correlati; il collettore seleziona le pubblicazioni pertinenti ad AI e normativa digitale."
   },
   {
-    "name": "EUR-Lex — Gazzetta ufficiale, serie L",
+    "name": "EUR-Lex — Gazzetta ufficiale UE, serie L",
     "url": "https://eur-lex.europa.eu/IT/display-feed.rss?rssId=222",
-    "homepage": "https://eur-lex.europa.eu/content/help/search/predefined-rss.html?locale=it",
+    "homepage": "https://eur-lex.europa.eu/oj/direct-access.html?locale=it",
     "enabled": true,
-    "note": "Feed ufficiale degli atti pubblicati nella serie L della Gazzetta ufficiale; il collettore applica il filtro di pertinenza digitale."
+    "note": "Atti della GU UE serie L, inclusi atti delegati e di esecuzione; il sito tiene solo gli atti con titolo su AI, dati o digitale."
+  },
+  {
+    "name": "Commissione europea — AI Act Service Desk",
+    "url": "https://ai-act-service-desk.ec.europa.eu/en/rss.xml",
+    "homepage": "https://ai-act-service-desk.ec.europa.eu/en",
+    "enabled": true,
+    "note": "Feed ufficiale dell'AI Act Service Desk della Commissione: guide e chiarimenti sull'applicazione dell'AI Act."
+  },
+  {
+    "name": "Commissione europea — Shaping Europe's Digital Future",
+    "url": "https://digital-strategy.ec.europa.eu/en/rss.xml",
+    "homepage": "https://digital-strategy.ec.europa.eu/en/news",
+    "enabled": true,
+    "note": "Feed ufficiale della DG CONNECT su politiche digitali, AI, dati e cybersecurity; filtrato per parole chiave."
+  },
+  {
+    "name": "AgID — Notizie",
+    "url": "https://www.agid.gov.it/it/rss.xml",
+    "homepage": "https://www.agid.gov.it/it/notizie",
+    "enabled": true,
+    "note": "Feed ufficiale dell'Agenzia per l'Italia Digitale; filtrato per parole chiave."
   }
 ]
