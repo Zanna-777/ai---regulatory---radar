@@ -21,8 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "items.json"
 SOURCES = ROOT / "config" / "sources.json"
 SOURCE_STATUS = ROOT / "data" / "source_status.json"
-AI_TERMS = re.compile(r"\b(ai act|artificial intelligence|intelligenza artificiale|machine learning|generative ai|general.purpose ai|foundation model|modelli? di ia|sistemi? di ia|algoritm\w*|biometri\w*|2024/1689|(?-i:AI))\b", re.I)
-DIGITAL_TERMS = re.compile(r"\b(gdpr|rgpd|privacy|data protection|protezione dei dati|data act|data governance act|digital services act|digital markets act|digital omnibus|digital fairness act|digital rulebook|eprivacy|nis\s?2|cybersecurity|cyber security|sicurezza informatica|cyber resilience act|data breach|violazione dei dati|regolamentazione digitale|normativa digitale|digital regulation|digital legislation|piattaforme digitali|mercati digitali|proposta legislativa.{0,35}digital|digital.{0,35}legislative proposal|2016/679|2023/2854|2022/2065|2022/1925|2022/2555)\b", re.I)
+AI_TERMS = re.compile(r"\b(ai act|artificial intelligence|intelligenza artificiale|machine learning|generative ai|general.purpose ai|foundation model|modelli? di ia|sistemi? di ia|algoritm\w*|biometri\w*|2024/1689|(?-i:AI)|(?-i:IA))\b", re.I)
+DIGITAL_TERMS = re.compile(r"\b(gdpr|rgpd|privacy|data protection|protezione dei dati|data act|data governance act|digital services act|digital markets act|digital omnibus|digital fairness act|digital rulebook|eprivacy|nis\s?2|cybersecurity|cyber security|cybersicurezza|cibersicurezza|sicurezza informatica|cyber resilience act|data breach|violazione dei dati|regolamentazione digitale|normativa digitale|digital regulation|digital legislation|piattaforme digitali|mercati digitali|proposta legislativa.{0,35}digital|digital.{0,35}legislative proposal|2016/679|2023/2854|2022/2065|2022/1925|2022/2555)\b", re.I)
 ACT_PATTERNS = {
     "AI Act": r"\b(ai act|artificial intelligence act|regolamento.{0,20}intelligenza artificiale|2024/1689)\b",
     "GDPR": r"\b(gdpr|rgpd|2016/679|general data protection regulation)\b",
